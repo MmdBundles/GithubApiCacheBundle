@@ -1,0 +1,8 @@
+mmd_github_api_homepage:
+    path:     /
+    defaults: { _controller: MmdGithubApiCacheBundle:Default:index }
+mmd_github_api_requests:
+    path:     /{path}
+    defaults: { _controller: MmdGithubApiCacheBundle:Default:api }
+    requirements:
+            path: .+

@@ -1,0 +1,12 @@
+parameters:
+    mmd_github_api_cache.token: "# overwite this in app/parameters.yml"
+
+    mmd_github_api_cache.redis.scheme: 'tcp'
+    mmd_github_api_cache.redis.host: '127.0.0.1'
+    mmd_github_api_cache.redis.port: 6379
+    mmd_github_api_cache.redis.options: {} # https://github.com/nrk/predis#client-configuration
+
+services:
+#    mmd_github_api_cache.example:
+#        class: Mmd\Bundle\GithubApiCacheBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
