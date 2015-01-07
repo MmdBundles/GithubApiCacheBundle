@@ -11,7 +11,7 @@ class DefaultController extends Controller
 {
     private $tokenRegex = '/^[0-9a-f]+$/';
 
-    private $pathRegex = '/^[0-9a-zA-Z]+(\/[0-9a-zA-Z]+)*$/';
+    private $pathRegex = '/^[0-9a-zA-Z\-\_]+(\/[0-9a-zA-Z\-\_]+)*$/';
 
     private $predisConnection;
 
