@@ -17,6 +17,8 @@ class DefaultController extends Controller
 
     private $cacheExpireSeconds = 3600;
 
+    private $cacheKeyPrefix = 'mmd_github_api:';
+
     /**
      * @return PredisClient
      */
@@ -42,7 +44,7 @@ class DefaultController extends Controller
      */
     private function getCache($path)
     {
-        $key = md5($path);
+        $key = $this->cacheKeyPrefix . md5($path);
 
         return json_decode(
             $this->getPredis()->get($key),
@@ -56,7 +58,7 @@ class DefaultController extends Controller
      */
     private function setCache($path, $response)
     {
-        $key = md5($path);
+        $key = $this->cacheKeyPrefix . md5($path);
 
         $this->getPredis()->set(
             $key,
